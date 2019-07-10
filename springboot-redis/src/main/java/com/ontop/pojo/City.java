@@ -8,7 +8,7 @@ public class City implements Serializable{
 	 */
 	private static final long serialVersionUID = -94826303565497616L;
 
-	private int id;
+	private Long id;
 
     /**
      * 城市名称
@@ -20,15 +20,15 @@ public class City implements Serializable{
      */
     private String desc;
 
-    public int getId() {
-        return id;
-    }
+    public Long getId() {
+		return id;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public String getCityName() {
+	public String getCityName() {
         return cityName;
     }
 
