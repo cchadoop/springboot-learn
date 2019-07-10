@@ -1,4 +1,4 @@
-package com.ontop.Controller;
+package com.ontop.controller;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ontop.Dao.UserMapper;
-import com.ontop.Entity.User;
+import com.ontop.entity.User;
+import com.ontop.mapper.UserMapper;
 
 @RestController
 public class UserController {

@@ -1,4 +1,4 @@
-package com.ontop.Entity;
+package com.ontop.entity;
 
 import java.io.Serializable;
 

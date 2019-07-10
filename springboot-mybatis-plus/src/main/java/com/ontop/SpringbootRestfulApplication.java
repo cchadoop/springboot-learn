@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan(basePackages="com.ontop.Dao")
+@MapperScan(basePackages="com.ontop.mapper")
 public class SpringbootRestfulApplication {
 
 	public static void main(String[] args) {
