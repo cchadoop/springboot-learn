@@ -5,6 +5,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 import com.ontop.entity.UserInfo;
 
-public interface UserInfoRepository extends MongoRepository<UserInfo, Long>,PagingAndSortingRepository<UserInfo, Long>{
+public interface UserInfoRepository
+		extends MongoRepository<UserInfo, Long>, PagingAndSortingRepository<UserInfo, Long> {
 
 }
