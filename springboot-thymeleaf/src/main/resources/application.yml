@@ -1,0 +1,10 @@
+##去除thymeleaf的html严格校验
+#spring:
+#  thymeleaf:
+#    mode: LEGACYHTML5
+#    cache: false
+#  freemarker:
+#    template-loader-path: classpath:/templates
+#    charset: utf-8
+#  mvc:
+#    static-path-pattern: /static/**

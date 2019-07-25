@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--解决th报错 -->
+<!-- <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"> -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>thymeleaf</title>
+<link th:href="@{/css/thymeleaf.css}" rel="stylesheet"/>
+</head>
+<body>
+<!-- 变量表达式 ${} -->
+<h1 	th:text="${msg}"></h1>
+id:<input type="text" th:value="${user.id}"><br/>
+name:<input type="text" th:value="${user.name}">
+
+<!-- 选择变量表达式 *{}
+	使用方法：首先通过th:object 获取对象，然后使用th:xx = "*{}"获取对象属性
+ -->
+<form th:object="${user}">
+	id:<input type="text" th:value="*{id}"><br/>
+	name:<input type="text" th:value="*{name}">
+</form>
+
+<!--链接表达式
+	使用方法：通过链接表达式@{}直接拿到应用路径，然后拼接静态资源路径
+  -->
+  <!-- 绝对路径 -->
+<a th:href="@{https://www.baidu.com/}" th:text="百度一下，你就知道"></a> 
+<!-- 相对路径 是相对于项目上下文 --> 
+<a th:href="@{/xx}" ></a>
+<!-- 相对路径 是相对于服务器路径 --> 
+<a th:href="@{~/xx}" ></a>
+
+<div th:each="user,stat:${userList}" th:class="${stat.even}?'even':'odd'">
+	下标：<input th:value="${stat.index}"/>
+    序号：<input th:value="${stat.count}"/>
+    奇偶：<input th:value="${stat.even}"/>
+	id:<input type="text" th:value="${user.id}">
+	name:<input type="text" th:value="${user.name}">
+</div>
+
+<table>
+	<tr th:each="user,stat:${userList}">
+		<td th:text="${user.id}"></td>
+		<td th:text="${user.name}"></td>
+		<!-- 时间工具类#dates来对日期进行格式化 -->
+		<td th:text="${#dates.format(user.createTime,'yyyy-MM-dd HH:mm:ss')}"></td>
+	</tr>
+</table>
+
+<script th:inline="javascript">
+    //通过内联表达式获取用户信息,因为JS无法获取服务端返回的变量
+    var userList = [[${userList}]];
+    console.log(userList);
+</script>
+</body>
+</html>
