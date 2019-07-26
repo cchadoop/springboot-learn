@@ -1,10 +1,18 @@
 ##去除thymeleaf的html严格校验
-#spring:
-#  thymeleaf:
-#    mode: LEGACYHTML5
-#    cache: false
+spring:
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
 #  freemarker:
 #    template-loader-path: classpath:/templates
 #    charset: utf-8
 #  mvc:
 #    static-path-pattern: /static/**
+
+#国际化文件的相对路径
+
+  messages:
+    basename: static/i18n/messages
+
+server:
+  port: 8888
