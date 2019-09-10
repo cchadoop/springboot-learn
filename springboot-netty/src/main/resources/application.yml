@@ -1,0 +1,21 @@
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    data-username: root
+#    password: root
+#    url: jdbc:mysql://localhost:3306/nettychat?characterEncoding=utf-8&useSSL=false
+#  jpa:
+#    show-sql: true
+
+#netty:
+#  port: 8090  #监听端口
+#  bossThread: 2 #线程数
+#  workerThread: 2 #线程数
+#  keepalive: true  #保持连接
+#  backlog: 100
+
+
+server:
+  tomcat:
+    max-http-post-size:
+      8192
